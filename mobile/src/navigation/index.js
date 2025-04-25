@@ -5,14 +5,18 @@ import CitiesScreen from '../screens/CitiesScreen';
 import TouristListScreen from '../screens/TouristListScreen';
 import TouristDetailScreen from '../screens/TouristDetailScreen';
 import TouristFormScreen from '../screens/TouristFormScreen';
+import LoginScreen from '../screens/LoginScreen'; 
+import RegisterScreen from '../screens/RegisterScreen';      
 
-const stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function AppRoutes(){
     return(
         <NavigationContainer>
-            <Stack.Navigator initialRoutName="Home">
+            <Stack.Navigator initialRouteName="Login">
                 <Stack.Screen name="Home" component={HomeScreen}/>
+                <Stack.Screen name="Login" component={LoginScreen} options={{headerShown: false}}/>
+                <Stack.Screen name="Register" component={RegisterScreen} />
                 <Stack.Screen name="Cidades" component={CitiesScreen}/>
                 <Stack.Screen name="Turisticos" component={TouristListScreen}/>
                 <Stack.Screen name="Detalhes" component={TouristDetailScreen}/>
